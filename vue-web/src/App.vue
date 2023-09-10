@@ -1,17 +1,17 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
   <NestWork msg="Click button test nest app"/>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+// import HelloWorld from './components/HelloWorld.vue'
 import NestWork from './components/NestWork.vue';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld,
+    // HelloWorld,
     NestWork
   }
 }

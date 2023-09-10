@@ -10,8 +10,12 @@
       <label>{{ postData }}</label>
     </div>
     <div>
-      <button @click="fetchCats">fetch cars / Post</button>
-      <label>{{ postData }}</label>
+      <button @click="fetchCats">fetch cars create / Post</button>
+      <label>{{ catsPost }}</label>
+    </div>
+    <div>
+      <button @click="fetchAllCat">fetch cars all / Post</button>
+      <label>{{ catsAll }}</label>
     </div>
   </div>
 </template>
@@ -25,7 +29,10 @@ export default {
   data() {
     return {
       getData: null,
-      postData: null
+      postData: null,
+
+      catsPost: null,
+      catsAll: null,
     }
   },
   methods: {
@@ -68,6 +75,14 @@ export default {
       }).then( response => response.json())
       .then( data => {
         console.log(data)
+        this.catsPost = data
+      })
+    },
+    fetchAllCat() {
+      fetch('/v1/api/cats/all').then( response => response.json())
+      .then( data => {
+        console.log(data)
+        this.catsAll = data
       })
     }
   },

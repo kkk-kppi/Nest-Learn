@@ -4,16 +4,35 @@ import { UpdateCatDto } from './dto/update-cat.dto';
 
 @Injectable()
 export class CatsService {
+  constructor() {}
+
   create(createCatDto: CreateCatDto) {
     return {
       code: '1',
       data: createCatDto,
-      message: '成功',
+      message: '新建成功',
     };
   }
 
   findAll() {
-    return `This action returns all cats`;
+    return {
+      code: '1',
+      data: [
+        {
+          name: '小红',
+          age: 1,
+        },
+        {
+          name: '小紫',
+          age: 2,
+        },
+        {
+          name: '小绿',
+          age: 3,
+        },
+      ],
+      message: '成功',
+    };
   }
 
   findOne(id: number) {
